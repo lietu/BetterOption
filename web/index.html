@@ -2,26 +2,18 @@
 layout: home
 ---
 
-{% if site.data.classes.size > 0 %}
-<h2>Problem classes</h2>
-<ul>
-{% for class in site.data.classes %}
-  <li><a href="{{class.path | relative_url }}">{{ class.item_name }}</a></li>
-{% endfor %}
-</ul>
-{% endif %}
+<h2>Welcome to Better Option!</h2>
+<p>
+  This site is collecting resources for identifying various things with some
+  problems worth considering. Some of the problems might be of ethical nature,
+  others might be environmental, and others some completely other kinds of
+  problems.
+</p>
 
-{% if site.data.problems.size > 0 %}
-<h2>Problems</h2>
-<ul>
-{% for problem in site.data.problems %}
-  <li>
-    <a href="{{problem.path | relative_url }}">{{ problem.item_name }}</a>
-    (<a href="{{problem.class_path | relative_url }}">{{ problem.class_name }}</a>)
-  </li>
-{% endfor %}
-</ul>
-{% endif %}
+<p>
+  Feel free to browse around for the various things listed here, and check out
+  the GitHub repository if you feel like contributing to the site.
+</p>
 
 {% if site.data.categories.size > 0 %}
 <h2>Categories of things</h2>
@@ -39,6 +31,27 @@ layout: home
   <li>
     <a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a>
     (<a href="{{ thing.category_path | relative_url }}">{{ thing.category_name }}</a>)
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if site.data.classes.size > 0 %}
+<h2>Problem classes</h2>
+<ul>
+{% for class in site.data.classes %}
+  <li><a href="{{class.path | relative_url }}">{{ class.item_name }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if site.data.problems.size > 0 %}
+<h2>Problems</h2>
+<ul>
+{% for problem in site.data.problems %}
+  <li>
+    <a href="{{problem.path | relative_url }}">{{ problem.item_name }}</a>
+    (<a href="{{problem.class_path | relative_url }}">{{ problem.class_name }}</a>)
   </li>
 {% endfor %}
 </ul>
