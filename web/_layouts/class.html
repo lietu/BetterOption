@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.item_name }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+    {% if page.problems.size > 0 %}
+    <h3>Related problems</h3>
+    <ul>
+    {% for problem in page.problems %}
+      <li><a href="../{{problem.path}}">{{ problem.item_name }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if page.things.size > 0 %}
+    <h3>Related things</h3>
+    <ul>
+    {% for thing in page.things %}
+      <li><a href="../{{thing.path}}">{{ thing.item_name }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>
