@@ -30,7 +30,7 @@ class Classifier:
         self.generate_data()
         self.write_data(dst)
 
-    def _load_files(self, path: Path, validator=None):
+    def _load_files(self, path, validator=None):
         data = {}
         for entry in path.iterdir():
             if entry.is_dir():
@@ -179,6 +179,7 @@ class Classifier:
 
                 for option in item.metadata["options"]:
                     option_name = option["raw_name"]
+                    self._add_meta(self.problems[problem], "option", option_name)
                     self._add_meta(self.options[option_name], "problem",
                                    problem)
             item.metadata["problems"] = p

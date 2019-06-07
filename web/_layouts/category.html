@@ -10,8 +10,8 @@ layout: default
   <div class="post-content">
     {{ content }}
 
-    <h3>Related things</h3>
     {% if page.things.size > 0 %}
+    <h3>Related things</h3>
     <ul>
     {% for thing in page.things %}
       <li><a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a></li>

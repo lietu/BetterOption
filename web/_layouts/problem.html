@@ -10,13 +10,24 @@ layout: default
   <div class="post-content">
     {{ content }}
 
-    <h3>Related things</h3>
     {% if page.things.size > 0 %}
+    <h3>Related things</h3>
     <ul>
     {% for thing in page.things %}
       <li>
         <a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a>
         (<a href="{{ thing.category_path | relative_url }}">{{ thing.category_name }}</a>)
+      </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if page.options.size > 0 %}
+    <h3>Related options</h3>
+    <ul>
+    {% for option in page.options %}
+      <li>
+        <a href="{{ option.path | relative_url }}">{{ option.item_name }}</a>
       </li>
     {% endfor %}
     </ul>
