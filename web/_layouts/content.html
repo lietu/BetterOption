@@ -1,17 +1,15 @@
 ---
 layout: default
 ---
+{{ content }}
 
-<section class="content">
-    {{ content }}
-</section>
-
-{% if page.sources.size > 0 %}
+{% if page.sources %}
 <section class="sources">
-    <h3>Sources quoted for this information</h3>
+    <h3>Sources for this information</h3>
     <ul>
         {% for source in page.sources %}
-        <li><a href="{{ source || escape }}">{{ source }}</a></li>
+        <li><a href="{{ source | escape }}">{{ source }}</a></li>
+        {% endfor %}
     </ul>
 </section>
 {% endif %}
