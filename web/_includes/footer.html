@@ -30,6 +30,8 @@
     {% if page.source_uri %}
     <p>Suggest an edit for this page on <a href="{{ page.source_uri }}">GitHub</a></p>
     {% endif %}
+
+    <p>Last updated {{ site.time | date: "%Y-%m-%d %H:%M:%S UTC%z"}}</p>
   </div>
 
 </footer>
