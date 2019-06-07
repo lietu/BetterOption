@@ -5,3 +5,13 @@ layout: default
 <section class="content">
     {{ content }}
 </section>
+
+{% if page.sources %}
+<section class="sources">
+    <h3>Sources quoted for this information</h3>
+    <ul>
+        {% for source in page.sources %}
+        <li><a href="{{ source || escape }}">{{ source }}</a></li>
+    </ul>
+</section>
+{% endif %}
