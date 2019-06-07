@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -exuo pipefail
+set -exu
 
 CONTAINER="betteroption"
 IMAGE="betteroption-build"

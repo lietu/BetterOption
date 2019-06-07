@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -exuo pipefail
+set -exu
 
 apk add --no-cache ca-certificates ruby
 pip install -r requirements.txt
