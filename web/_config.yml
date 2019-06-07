@@ -4,7 +4,7 @@ description: >-
 baseurl: "/BetterOption"
 url: "https://lietu.github.io"
 
-google_analytics:
+google_analytics: UA-141646735-1
 github_username: lietu/BetterOption
 
 # Build settings
