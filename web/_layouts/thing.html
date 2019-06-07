@@ -4,7 +4,7 @@ layout: default
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.item_name }}</h1>
-    <sub><a href="../{{ page.category.path }}">{{ page.category.item_name }}</a></sub>
+    <sub><a href="{{ page.category.path | relative_url  }}">{{ page.category.item_name }}</a></sub>
   </header>
 
   <div class="post-content">
@@ -15,8 +15,8 @@ layout: default
     <ul>
     {% for problem in page.problems %}
       <li>
-        <a href="../{{problem.path}}">{{ problem.item_name }}</a>
-        (<a href="../{{problem.class_path}}">{{ problem.class_name }}</a>)
+        <a href="{{ problem.path | relative_url }}">{{ problem.item_name }}</a>
+        (<a href="{{ problem.class_path | relative_url }}">{{ problem.class_name }}</a>)
       </li>
     {% endfor %}
     </ul>
@@ -27,7 +27,7 @@ layout: default
     <ul>
     {% for option in page.options %}
       <li>
-        <a href="../{{option.path}}">{{ option.item_name }}</a>: {{ option.description }}
+        <a href="{{ option.path | relative_url }}">{{ option.item_name }}</a>: {{ option.description }}
       </li>
     {% endfor %}
     </ul>

@@ -1,8 +1,8 @@
 title: Better Option
 description: >-
   Promoting better options for a better future.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/BetterOption"
+url: "https://lietu.github.io"
 
 google_analytics:
 github_username: lietu/BetterOption

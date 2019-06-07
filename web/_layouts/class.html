@@ -14,7 +14,7 @@ layout: default
     <h3>Related problems</h3>
     <ul>
     {% for problem in page.problems %}
-      <li><a href="../{{problem.path}}">{{ problem.item_name }}</a></li>
+      <li><a href="{{ problem.path | relative_url }}">{{ problem.item_name }}</a></li>
     {% endfor %}
     </ul>
     {% endif %}
@@ -23,7 +23,7 @@ layout: default
     <h3>Related things</h3>
     <ul>
     {% for thing in page.things %}
-      <li><a href="../{{thing.path}}">{{ thing.item_name }}</a></li>
+      <li><a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a></li>
     {% endfor %}
     </ul>
     {% endif %}
