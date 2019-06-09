@@ -74,7 +74,7 @@ class Item:
         if not self.FILE_PATH:
             raise ValueError("No FILE_PATH defined!")
 
-        return f"{self.FILE_PATH}/{self.raw_name}.html"
+        return f"{self.FILE_PATH}/{self.raw_name}.md"
 
 
 class Category(Item):
