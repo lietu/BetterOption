@@ -1,6 +1,7 @@
 ---
 item_name: Linen
 category: clothes
+image: linen
 options:
  - raw_name: cotton
    description: |

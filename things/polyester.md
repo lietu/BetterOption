@@ -1,5 +1,6 @@
 ---
 item_name: Polyester
+image: polyester
 category: clothes
 problems:
  - microplastics

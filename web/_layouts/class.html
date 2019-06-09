@@ -7,6 +7,10 @@ layout: content
     <h1 class="post-title">{{ page.item_name }}</h1>
   </header>
 
+  {% if page.image and page.image != "none" %}
+  {% include image.html image=page.image %}
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
   </div>

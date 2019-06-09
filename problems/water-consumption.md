@@ -1,5 +1,6 @@
 ---
 item_name: High water consumption
+image: water-footprint
 class: environmental
 sources:
  - https://en.wikipedia.org/wiki/Water_scarcity

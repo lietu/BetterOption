@@ -1,6 +1,7 @@
 ---
 item_name: Cotton
 category: clothes
+image: cotton
 problems:
  - water-consumption
 options:

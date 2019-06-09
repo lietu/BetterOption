@@ -29,7 +29,11 @@ class Item:
 
         self.set_meta("layout", self.LAYOUT)
         self.set_meta("title", self.item_name)
+        self.set_meta("image", self.get_image())
         self.set_meta("source_uri", REPOSITORY_BASE + path.as_posix())
+
+    def get_image(self):
+        return self.get_meta("image", "none")
 
     def get_meta(self, field, default=None):
         return self.item.metadata.get(field, default)
@@ -55,7 +59,10 @@ class Item:
         raise ValueError("Called generate_data on Item")
 
     def validator(self):
-        pass
+        image = self.get_meta("image", None)
+        if image:
+            if image not in self.classifier.images:
+                raise ValueError(f"Invalid image {image}")
 
     def get_link(self):
         if not self.FILE_PATH:
@@ -84,7 +91,8 @@ class Category(Item):
         return {
             "raw_name": self.raw_name,
             "item_name": self.item_name,
-            "link": self.get_link()
+            "link": self.get_link(),
+            "image": self.get_image()
         }
 
 
@@ -102,7 +110,8 @@ class Class(Item):
         return {
             "raw_name": self.raw_name,
             "item_name": self.item_name,
-            "link": self.get_link()
+            "link": self.get_link(),
+            "image": self.get_image()
         }
 
 
@@ -118,6 +127,8 @@ class Problem(Item):
         if self.cls not in self.classifier.classes:
             raise ValueError(f"Class {self.cls} not found.")
 
+        super().validator()
+
     def get_class(self) -> Class:
         return self.classifier.classes[self.cls]
 
@@ -128,7 +139,8 @@ class Problem(Item):
             "item_name": self.item_name,
             "class_link": f"classes/{class_.raw_name}.html",
             "class_name": class_.item_name,
-            "link": self.get_link()
+            "link": self.get_link(),
+            "image": self.get_image()
         }
 
     def generate_data(self):
@@ -147,6 +159,8 @@ class Thing(Item):
     def validator(self):
         if self.category not in self.classifier.categories:
             raise ValueError(f"Category {self.category} not found.")
+
+        super().validator()
 
     def get_category(self) -> Category:
         return self.classifier.categories[self.category]
@@ -205,7 +219,8 @@ class Thing(Item):
             "item_name": self.item_name,
             "category_link": f"categories/{category.raw_name}.html",
             "category_name": category.item_name,
-            "link": f"/{self.raw_name}/"
+            "link": f"/{self.raw_name}/",
+            "image": self.get_image()
         }
 
 
@@ -215,8 +230,11 @@ class Classifier:
         self.classes = {}  # type: dict[Class]
         self.problems = {}  # type: dict[Problem]
         self.things = {}  # type: dict[Thing]
+        self.images = {}  # type: dict[dict]
 
     def run(self, src, dst):
+        self.images = self._load_images(src / "images")
+
         self.classes = self._load_files(
             src / "problems" / "classes",
             cls=Class
@@ -236,6 +254,27 @@ class Classifier:
 
         self.generate_data()
         self.write_data(dst)
+
+    @staticmethod
+    def _load_images(path):
+        data = {}
+        for entry in path.iterdir():
+            filename = entry.parts[-1]
+            if not filename.endswith(".md"):
+                continue
+
+            doc = frontmatter.load(entry)
+
+            name = filename.rsplit(".", 1)[0]
+            source_file = doc.metadata["filename"]
+            data[name] = {
+                "source": doc.metadata["source"],
+                "content": doc.content,
+                "filename": source_file,
+                "license": doc.metadata["license"],
+                "url": (path / source_file).as_posix()
+            }
+        return data
 
     def _load_files(self, path, cls):
         data = {}
@@ -284,6 +323,7 @@ class Classifier:
         categories_dir = dst / Category.FILE_PATH
         problems_dir = dst / Problem.FILE_PATH
         things_dir = dst / Thing.FILE_PATH
+        images_dir = dst / "images"
         data_dir = dst / "_data"
 
         paths = (
@@ -291,6 +331,7 @@ class Classifier:
             categories_dir,
             problems_dir,
             things_dir,
+            images_dir,
             data_dir
         )
 
@@ -323,10 +364,15 @@ class Classifier:
             path.write_text(frontmatter.dumps(thing.item))
             things.append(thing.get_definition())
 
+        for _, image in self.images.items():
+            shutil.copy(image["url"], images_dir / image["filename"])
+            del image["filename"]
+
         (data_dir / "classes.yml").write_text(yaml.dump(classes))
         (data_dir / "categories.yml").write_text(yaml.dump(categories))
         (data_dir / "problems.yml").write_text(yaml.dump(problems))
         (data_dir / "things.yml").write_text(yaml.dump(things))
+        (data_dir / "images.yml").write_text(yaml.dump(self.images))
 
 
 def main():

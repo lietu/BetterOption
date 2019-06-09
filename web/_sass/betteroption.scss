@@ -1,0 +1,26 @@
+.image {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+
+  img {
+    max-height: 400px;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    border: 1px solid #111;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 6px;
+    margin: 6px;
+
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.image:hover .tooltip {
+  visibility: visible;
+}

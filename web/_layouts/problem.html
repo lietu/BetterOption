@@ -7,6 +7,10 @@ layout: content
     <sub><a href="{{ page.class.link | relative_url  }}">{{ page.class.item_name }}</a></sub>
   </header>
 
+  {% if page.image and page.image != "none" %}
+  {% include image.html image=page.image %}
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
   </div>

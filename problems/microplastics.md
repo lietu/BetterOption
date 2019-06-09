@@ -1,6 +1,7 @@
 ---
 item_name: Microplastics
 class: environmental
+image: microplastics
 sources:
  - https://en.wikipedia.org/wiki/Microplastics
  - https://oceanservice.noaa.gov/facts/microplastics.html

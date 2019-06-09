@@ -1,5 +1,6 @@
 ---
 item_name: Non-renewable
+image: non-renewable
 class: environmental
 sources:
  - https://en.wikipedia.org/wiki/Non-renewable_resource
