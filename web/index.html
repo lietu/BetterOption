@@ -24,6 +24,15 @@ layout: home
 </ul>
 {% endif %}
 
+{% if site.data.classes.size > 0 %}
+<h2>Problem classes</h2>
+<ul>
+{% for class in site.data.classes %}
+  <li><a href="{{class.link | relative_url }}">{{ class.item_name }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
 {% if site.data.things.size > 0 %}
 <h2>Things</h2>
 <ul>
@@ -36,14 +45,8 @@ layout: home
 </ul>
 {% endif %}
 
-{% if site.data.classes.size > 0 %}
-<h2>Problem classes</h2>
-<ul>
-{% for class in site.data.classes %}
-  <li><a href="{{class.link | relative_url }}">{{ class.item_name }}</a></li>
-{% endfor %}
-</ul>
-{% endif %}
+{% comment %}
+<!-- Commented out since this section might just not make sense in terms of main navigation -->
 
 {% if site.data.problems.size > 0 %}
 <h2>Problems</h2>
@@ -56,3 +59,4 @@ layout: home
 {% endfor %}
 </ul>
 {% endif %}
+{% endcomment %}
