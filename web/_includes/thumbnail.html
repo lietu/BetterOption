@@ -1,0 +1,10 @@
+{% assign image = site.data.images[include.image] %}
+<div class="tile">
+    <a href="{{ include.link | relative_url }}">
+        <div class="thumbnail"
+             style="background-image: url({{ image.url | relative_url }});">
+                &nbsp;
+        </div>
+        {{ include.title }}
+    </a>
+</div>

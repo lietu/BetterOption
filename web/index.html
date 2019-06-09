@@ -17,32 +17,29 @@ layout: home
 
 {% if site.data.categories.size > 0 %}
 <h2>Categories of things</h2>
-<ul>
+<div class="thumbnail-list">
 {% for category in site.data.categories %}
-  <li><a href="{{ category.link | relative_url }}">{{ category.item_name }}</a></li>
+{% include thumbnail.html image=category.image link=category.link title=category.item_name %}
 {% endfor %}
-</ul>
+</div>
 {% endif %}
 
 {% if site.data.classes.size > 0 %}
 <h2>Problem classes</h2>
-<ul>
+<div class="thumbnail-list">
 {% for class in site.data.classes %}
-  <li><a href="{{class.link | relative_url }}">{{ class.item_name }}</a></li>
+{% include thumbnail.html image=class.image link=class.link title=class.item_name %}
 {% endfor %}
-</ul>
+</div>
 {% endif %}
 
 {% if site.data.things.size > 0 %}
 <h2>Things</h2>
-<ul>
+<div class="thumbnail-list">
 {% for thing in site.data.things %}
-  <li>
-    <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
-    (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
-  </li>
+{% include thumbnail.html image=thing.image link=thing.link title=thing.item_name %}
 {% endfor %}
-</ul>
+</div>
 {% endif %}
 
 {% comment %}
@@ -50,13 +47,11 @@ layout: home
 
 {% if site.data.problems.size > 0 %}
 <h2>Problems</h2>
-<ul>
 {% for problem in site.data.problems %}
-  <li>
-    <a href="{{problem.link | relative_url }}">{{ problem.item_name }}</a>
-    (<a href="{{problem.class_link | relative_url }}">{{ problem.class_name }}</a>)
-  </li>
+<li>
+  <a href="{{problem.link | relative_url }}">{{ problem.item_name }}</a>
+  (<a href="{{problem.class_link | relative_url }}">{{ problem.class_name }}</a>)
+</li>
 {% endfor %}
-</ul>
 {% endif %}
 {% endcomment %}

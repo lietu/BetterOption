@@ -24,3 +24,27 @@
 .image:hover .tooltip {
   visibility: visible;
 }
+
+.thumbnail-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .tile {
+    .thumbnail {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 100%;
+      width: 100%;
+    }
+
+    text-align: center;
+
+    height: 200px;
+    width: 200px;
+    margin: 8px;
+  }
+
+  margin-bottom: 32px;
+}
