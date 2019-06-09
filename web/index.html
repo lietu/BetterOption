@@ -19,7 +19,7 @@ layout: home
 <h2>Categories of things</h2>
 <ul>
 {% for category in site.data.categories %}
-  <li><a href="{{ category.path | relative_url }}">{{ category.item_name }}</a></li>
+  <li><a href="{{ category.link | relative_url }}">{{ category.item_name }}</a></li>
 {% endfor %}
 </ul>
 {% endif %}
@@ -29,8 +29,8 @@ layout: home
 <ul>
 {% for thing in site.data.things %}
   <li>
-    <a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a>
-    (<a href="{{ thing.category_path | relative_url }}">{{ thing.category_name }}</a>)
+    <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
+    (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
   </li>
 {% endfor %}
 </ul>
@@ -40,7 +40,7 @@ layout: home
 <h2>Problem classes</h2>
 <ul>
 {% for class in site.data.classes %}
-  <li><a href="{{class.path | relative_url }}">{{ class.item_name }}</a></li>
+  <li><a href="{{class.link | relative_url }}">{{ class.item_name }}</a></li>
 {% endfor %}
 </ul>
 {% endif %}
@@ -50,18 +50,9 @@ layout: home
 <ul>
 {% for problem in site.data.problems %}
   <li>
-    <a href="{{problem.path | relative_url }}">{{ problem.item_name }}</a>
-    (<a href="{{problem.class_path | relative_url }}">{{ problem.class_name }}</a>)
+    <a href="{{problem.link | relative_url }}">{{ problem.item_name }}</a>
+    (<a href="{{problem.class_link | relative_url }}">{{ problem.class_name }}</a>)
   </li>
-{% endfor %}
-</ul>
-{% endif %}
-
-{% if site.data.options.size > 0 %}
-<h2>Options</h2>
-<ul>
-{% for option in site.data.options %}
-  <li><a href="{{ option.path | relative_url }}">{{ option.item_name }}</a></li>
 {% endfor %}
 </ul>
 {% endif %}

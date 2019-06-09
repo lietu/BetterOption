@@ -1,5 +1,12 @@
 ---
 item_name: Cotton
+category: clothes
+problems:
+ - water-consumption
+options:
+ - raw_name: linen
+   description: |
+     Linen makes a great alternative to polyester when maximum breathability is desired.
 sources:
  - https://en.wikipedia.org/wiki/Cotton
  - https://www.ctshirts.com/eu/about-our-shirt-weaves/

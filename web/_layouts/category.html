@@ -9,14 +9,14 @@ layout: content
 
   <div class="post-content">
     {{ content }}
-
-    {% if page.things.size > 0 %}
-    <h3>Related things</h3>
-    <ul>
-    {% for thing in page.things %}
-      <li><a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a></li>
-    {% endfor %}
-    </ul>
-    {% endif %}
   </div>
+
+  {% if page.things.size > 0 %}
+  <h3>Things in this category</h3>
+  <ul>
+  {% for thing in page.things %}
+    <li><a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a></li>
+  {% endfor %}
+  </ul>
+  {% endif %}
 </article>

@@ -4,33 +4,34 @@ layout: content
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.item_name }}</h1>
-    <sub><a href="{{ page.class.path | relative_url  }}">{{ page.class.item_name }}</a></sub>
+    <sub><a href="{{ page.class.link | relative_url  }}">{{ page.class.item_name }}</a></sub>
   </header>
 
   <div class="post-content">
     {{ content }}
-
-    {% if page.things.size > 0 %}
-    <h3>Related things</h3>
-    <ul>
-    {% for thing in page.things %}
-      <li>
-        <a href="{{ thing.path | relative_url }}">{{ thing.item_name }}</a>
-        (<a href="{{ thing.category_path | relative_url }}">{{ thing.category_name }}</a>)
-      </li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% if page.options.size > 0 %}
-    <h3>Related options</h3>
-    <ul>
-    {% for option in page.options %}
-      <li>
-        <a href="{{ option.path | relative_url }}">{{ option.item_name }}</a>
-      </li>
-    {% endfor %}
-    </ul>
-    {% endif %}
   </div>
+
+  {% if page.things.size > 0 %}
+  <h3>Related things</h3>
+  <ul>
+  {% for thing in page.things %}
+    <li>
+      <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
+      (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.options.size > 0 %}
+  <h3>Options for things with this problem</h3>
+  <ul>
+  {% for thing in page.options %}
+    <li>
+      <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
+      (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
 </article>

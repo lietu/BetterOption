@@ -6,10 +6,10 @@ problems:
  - flammable
  - non-renewable
 options:
- - name: linen
+ - raw_name: linen
    description: |
      Linen makes a great alternative to polyester when maximum breathability is desired.
- - name: cotton
+ - raw_name: cotton
    description: |
      Cotton comes in many weaves, and some of them (e.g. poplin and seersucker) are particularly good options when breathability is desired.
 sources:

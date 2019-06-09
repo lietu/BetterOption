@@ -4,34 +4,58 @@ layout: content
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.item_name }}</h1>
-    <sub><a href="{{ page.category.path | relative_url  }}">{{ page.category.item_name }}</a></sub>
+    <sub><a href="{{ page.category.link | relative_url  }}">{{ page.category.item_name }}</a></sub>
   </header>
 
   <div class="post-content">
     {{ content }}
-
-    {% if page.problems.size > 0 %}
-    <h3>Related problems</h3>
-    <ul>
-    {% for problem in page.problems %}
-      <li>
-        <a href="{{ problem.path | relative_url }}">{{ problem.item_name }}</a>
-        (<a href="{{ problem.class_path | relative_url }}">{{ problem.class_name }}</a>)
-      </li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-
-    {% if page.options.size > 0 %}
-    <h3>Options</h3>
-    <ul>
-    {% for option in page.options %}
-      <li>
-        <a href="{{ option.path | relative_url }}">{{ option.item_name }}</a>: {{ option.description }}
-      </li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-
   </div>
+
+  {% if page.problems.size > 0 %}
+  <h3>Related problems</h3>
+  <ul>
+  {% for problem in page.problems %}
+    <li>
+      <a href="{{ problem.link | relative_url }}">{{ problem.item_name }}</a>
+      (<a href="{{ problem.class_link | relative_url }}">{{ problem.class_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.options.size > 0 %}
+  <h3>Options</h3>
+  <ul>
+  {% for thing in page.options %}
+    <li>
+      <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
+      (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.option_for.size > 0 %}
+  <h3>Option for</h3>
+  <ul>
+  {% for thing in page.option_for %}
+    <li>
+      <a href="{{ thing.link | relative_url }}">{{ thing.item_name }}</a>
+      (<a href="{{ thing.category_link | relative_url }}">{{ thing.category_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.option_for_problem.size > 0 %}
+  <h3>Option for things with these problems</h3>
+  <ul>
+  {% for problem in page.option_for_problem %}
+    <li>
+      <a href="{{ problem.link | relative_url }}">{{ problem.item_name }}</a>
+      (<a href="{{ problem.class_link | relative_url }}">{{ problem.class_name }}</a>)
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
 </article>

@@ -1,5 +1,10 @@
 ---
 item_name: Linen
+category: clothes
+options:
+ - raw_name: cotton
+   description: |
+     Cotton comes in many weaves, and some of them (e.g. poplin and seersucker) are particularly good options when breathability is desired.
 sources:
  - https://en.wikipedia.org/wiki/Linen
 ---
