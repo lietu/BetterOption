@@ -8,6 +8,10 @@ options:
  - raw_name: linen
    description: |
      Linen makes a great alternative to polyester when maximum breathability is desired.
+ - raw_name: hemp
+   description: |
+     Hemp is an eco-friendly option when it's somewhat rougher fibers
+     are acceptable.
 sources:
  - https://en.wikipedia.org/wiki/Cotton
  - https://www.ctshirts.com/eu/about-our-shirt-weaves/

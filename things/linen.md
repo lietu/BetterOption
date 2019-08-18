@@ -5,7 +5,11 @@ image: linen
 options:
  - raw_name: cotton
    description: |
-     Cotton comes in many weaves, and some of them (e.g. poplin and seersucker) are particularly good options when breathability is desired.
+     Cotton comes in many weaves, and some of them (e.g. poplin and seersucker) are particularly good options when breathability is desired
+ - raw_name: hemp
+   description: |
+     Hemp is an eco-friendly option when it's somewhat rougher fibers
+     are acceptable
 sources:
  - https://en.wikipedia.org/wiki/Linen
 ---
