@@ -2,6 +2,8 @@
 
 Database of better options for various things with issues.
 
+[https://lietu.github.io/BetterOption/](https://lietu.github.io/BetterOption/)
+
 # Contributing
 
 There are two main ways to contribute to the database, if you want to simply add more content.
