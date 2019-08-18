@@ -1,0 +1,58 @@
+clothes:
+  content: Clothing in history
+  license: Public Domain
+  source: https://commons.wikimedia.org/wiki/File:Clothes.jpg
+  url: images/clothes.jpg
+cotton:
+  content: Cotton davenport
+  license: Creative Commons Attribution-Share Alike 3.0 Unported, 2.5 Generic, 2.0
+    Generic and 1.0 Generic
+  source: https://commons.wikimedia.org/wiki/File:Cotton_sofa.JPG
+  url: images/cotton.jpg
+flammable:
+  content: ''
+  license: Public Domain
+  source: https://commons.wikimedia.org/wiki/File:GHS-pictogram-flamme.svg
+  url: images/600px-GHS-pictogram-flamme.svg.png
+hemp:
+  content: Close-up of the 100 % Hemp fabric
+  license: Creative Commons Attribution-Share Alike 2.0 Generic
+  source: https://commons.wikimedia.org/wiki/File:Hemp-600x600.jpg
+  url: images/Hemp-600x600.jpg
+linen:
+  content: Linen handkerchief.
+  license: Public Domain
+  source: https://commons.wikimedia.org/wiki/File:Handkerchief.jpg
+  url: images/linen.jpg
+microplastics:
+  content: Microplastics in sediments from the rivers Elbe (A), Mosel (B), Neckar
+    (C), and Rhine (D).
+  license: Creative Commons Attribution 4.0 International
+  source: https://commons.wikimedia.org/wiki/File:Microplastics_in_sediments.jpg
+  url: images/Microplastics_in_sediments.jpg
+non-renewable:
+  content: Coal mine in Wyoming
+  license: Public Domain
+  source: https://commons.wikimedia.org/wiki/File:Coal_mine_Wyoming.jpg
+  url: images/Coal_mine_Wyoming.jpg
+none:
+  content: No image.
+  license: Creative Commons Attribution-Share Alike 4.0 International
+  source: https://commons.wikimedia.org/wiki/File:No_image_available_500_x_500.svg
+  url: images/none.png
+polyester:
+  content: Close-up of a 100% polyester shirt.
+  license: Creative Commons Attribution-Share Alike 3.0 Unported
+  source: https://commons.wikimedia.org/wiki/File:Polyester_Shirt,_close-up.jpg
+  url: images/polyester.jpg
+water-footprint:
+  content: The global water footprint.
+  license: Creative Commons Attribution 2.0 Generic
+  source: https://commons.wikimedia.org/wiki/File:World_Water_Footprint.png
+  url: images/World_Water_Footprint.png
+water-pollution:
+  content: "The New River flows at 200 cf s as it enters Imperial County, Southern\
+    \ California (United States) from Baja California state (M\xE9xico)."
+  license: Public Domain
+  source: https://commons.wikimedia.org/wiki/File:Nrborderborderentrythreecolorsmay05-1-.JPG
+  url: images/Nrborderborderentrythreecolorsmay05-1-.jpg

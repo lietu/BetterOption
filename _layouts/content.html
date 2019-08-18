@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{{ content }}
+
+{% if page.sources %}
+<section class="sources">
+    <h3>Sources for this information</h3>
+    <ul>
+        {% for source in page.sources %}
+        <li><a href="{{ source | escape }}">{{ source }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}

@@ -1,0 +1,14 @@
+{% assign image = site.data.images[include.image] %}
+<div class="image">
+    <img src="{{ image.url | relative_url }}"/>
+
+    <div class="tooltip">
+        {{ image.content }}
+
+        <p>Image from <a href="{{ image.source }}">{{ image.source }}</a></p>
+        <p>Published under the {{ image.license }} -license.</p>
+        {% if image.author %}
+        <p>By <a href="{{ image.attribution_url }}">{{ image.author }}</a></p>
+        {% endif %}
+    </div>
+</div>

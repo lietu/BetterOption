@@ -1,0 +1,23 @@
+title: Better Option
+description: >-
+  Promoting better options for a better future.
+baseurl: "/BetterOption"
+url: "https://lietu.github.io"
+
+google_analytics: UA-141646735-1
+github_username: lietu/BetterOption
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

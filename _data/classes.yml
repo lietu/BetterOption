@@ -1,0 +1,8 @@
+- image: none
+  item_name: Other
+  link: classes/other.html
+  raw_name: other
+- image: water-pollution
+  item_name: Environmental
+  link: classes/environmental.html
+  raw_name: environmental

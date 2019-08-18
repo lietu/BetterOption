@@ -1,0 +1,50 @@
+.image {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+
+  img {
+    max-height: 400px;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    border: 1px solid #111;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 6px;
+    margin: 6px;
+
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.image:hover .tooltip {
+  visibility: visible;
+}
+
+.thumbnail-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .tile {
+    .thumbnail {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 100%;
+      width: 100%;
+    }
+
+    text-align: center;
+
+    height: 200px;
+    width: 200px;
+    margin: 8px;
+  }
+
+  margin-bottom: 32px;
+}

@@ -1,0 +1,24 @@
+- class_link: classes/environmental.html
+  class_name: Environmental
+  image: non-renewable
+  item_name: Non-renewable
+  link: problems/non-renewable.html
+  raw_name: non-renewable
+- class_link: classes/environmental.html
+  class_name: Environmental
+  image: microplastics
+  item_name: Microplastics
+  link: problems/microplastics.html
+  raw_name: microplastics
+- class_link: classes/other.html
+  class_name: Other
+  image: flammable
+  item_name: Flammable
+  link: problems/flammable.html
+  raw_name: flammable
+- class_link: classes/environmental.html
+  class_name: Environmental
+  image: water-footprint
+  item_name: High water consumption
+  link: problems/water-consumption.html
+  raw_name: water-consumption
